@@ -1,0 +1,43 @@
+﻿@model List<QMProject.Models.ParentClass>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row inverse" style="margin:5px">
+        <div class="col-mid-3" align="left">
+            <label style="color:white" class="pull-left"><iframe src="http://free.timeanddate.com/clock/i4p1ayw2/n756" frameborder="0" width="83" height="18"></iframe></label>
+        </div>
+        <form method="post" action="/Admin/LogOut">
+            <input id="logout" name="logout" type="submit" class="btn btn-info pull-right" value="Logout" />
+        </form>
+    </div>
+    <div id="navbar" class="navbar navbar-inverse" style="align-content:center">
+        <div id="inner_nav" class="navbar-inner">
+            <div class="span2" align="center" style="margin:3px">
+                <a href="/Admin/Home">
+                    <img src="~/Images/logo.png" style="border-radius:3px" />
+                </a>
+            </div>
+            <div class="span12">
+                <a id="home" name="home" class="brand" href="/Admin/Home">Home</a>
+                <a id="search" name="search" class="brand" href="/Admin/Search_Store">Medicine Stores</a>
+                <a id="search" name="search" class="brand" href="/Admin/Search_Medicines">Medicines</a>
+                <a id="update" name="update" class="brand" href="/Admin/Search_User">Clients</a>
+                <a id="history" name="history" class="brand" href="/Admin/History">History and Logs</a>
+                <a id="contactus" name="admin" class="brand" href="/Admin/Add_Admin">Add Admin</a>
+            </div>
+            <div align="right" style="margin-right:5px">
+                <label class="pull-right" style="margin-top:5px; color:white">@Session["adminName"]</label>
+            </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody();
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="562da4448a364d3aac5c7bfd803740ae" Name="Diagram1">
+        <EntityTypeShape EntityType="QuickMedicineModel.Add_cart" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickMedicineModel.class" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickMedicineModel.medicine" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickMedicineModel.medicine_stores" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickMedicineModel.salt" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickMedicineModel.salt_class" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickMedicineModel.stores_medicine" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickMedicineModel.user" Width="1.5" PointX="6" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickMedicineModel.users_medicine" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <AssociationConnector Association="QuickMedicineModel.FK_Add_cart_medicine" ManuallyRouted="false" />
+        <AssociationConnector Association="QuickMedicineModel.FK_add_cart_to_medicine_store" ManuallyRouted="false" />
+        <AssociationConnector Association="QuickMedicineModel.FK_Add_cart_users" ManuallyRouted="false" />
+        <AssociationConnector Association="QuickMedicineModel.FK_medicine_class" ManuallyRouted="false" />
+        <AssociationConnector Association="QuickMedicineModel.FK_salt_class_class" ManuallyRouted="false" />
+        <AssociationConnector Association="QuickMedicineModel.FK_medicine_salt" ManuallyRouted="false" />
+        <AssociationConnector Association="QuickMedicineModel.FK_Table_medicine" ManuallyRouted="false" />
+        <AssociationConnector Association="QuickMedicineModel.FK_users_medicine_medicine" ManuallyRouted="false" />
+        <AssociationConnector Association="QuickMedicineModel.FK_Table_medicine_stores" ManuallyRouted="false" />
+        <AssociationConnector Association="QuickMedicineModel.FK_salt_class_salt" ManuallyRouted="false" />
+        <AssociationConnector Association="QuickMedicineModel.FK_users_medicine_users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

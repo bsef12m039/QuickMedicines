@@ -1,0 +1,81 @@
+﻿@model List<QMProject.Models.ParentClass>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script src="http://www.geoplugin.net/javascript.gp"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row row-inverse" style="margin:5px">
+        <div class="col-mid-3" align="left">
+            <label style="color:white" class="pull-left"><iframe src="http://free.timeanddate.com/clock/i4p1ayw2/n756" frameborder="0" width="83" height="18"></iframe></label>
+        </div>
+        <div align="right" class="dropdown">
+            <button id="signup" name="signup" type="button" class="btn btn-info pull-right" style="margin-right:5px" value="SignUp" data-toggle="dropdown">SignUp</button>
+            <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="SignUp">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/ClientLogOut/SignUp">Medicine Seeker</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Medicine Shop</a></li>
+            </ul>
+        </div>
+        <form method="post" action="/ClientLogOut/Login">
+            <div class="pull-right">
+                <input type="text" name = "user_name" placeholder = "user name" />
+                <input type="password" name = "password" placeholder = "password" />
+                <input id="login" name="login" type="submit" class="btn btn-info" style="margin-right:5px; margin-bottom: 10px" value="Login" />
+            </div>
+        </form>
+    </div>
+    <div id="navbar" class="navbar navbar-inverse" align="center">
+        <div id="inner_nav" class="navbar-inner">
+            <div class="span2" align="center" style="margin-top:3px">
+                <a href="/ClientLogOut/Home">
+                    <img src="~/Images/logo.png" style="border-radius:3px" />
+                </a>
+            </div>
+            <div class="span8">
+                <a id="home" name="home" class="brand" href="/ClientLogOut/Home">Home</a>
+                <a id="search" name="search" class="brand" href="/ClientLogOut/Search">Search</a>
+                <a id="contactus" name="contactus" class="brand" href="/ClientLogOut/Contact">Contact us</a>
+            </div>
+        </div>
+    </div>
+    <div style="margin:20px">
+        <div class="row">
+            <div id="sidebar" class="sidebar-nav-fixed side pull-left" style="background-color: black; margin-left: 20px; border-radius: 5px; padding: 10px">
+                <ul>
+                    <li>
+                        <label style="color:blue">Muhammad Abubaker</label>
+                    </li>
+                    <li>
+                        <label style="color:blue">Hafiz Bilal Ahmed</label>
+                    </li>
+                    <li>
+                        <label style="color:blue">Faisal Pervaiz</label>
+                    </li>
+                </ul>
+            </div>
+            <div id="sidbar" class="sidebar-nav-fixed pull-right" style="background-color: black; border-radius: 5px;padding: 10px">
+                <ul>
+                    <li>
+                        <label style="color: blue">Azeem Medical Store</label>
+                    </li>
+                    <li>
+                        <label style="color: blue">Punjab Medical Store</label>
+                    </li>
+                    <li>
+                        <label style="color: blue">Chand Medical Store</label>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                @RenderBody();
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

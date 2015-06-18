@@ -1,0 +1,39 @@
+﻿@model List<QMProject.Models.ParentClass>
+@{
+    ViewBag.Title = "Search_Result_Stores";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="span12" align="center">
+    <table class="table">
+        <tr>
+            <td><p style="color: mediumblue">Image</p></td>
+            <td><p style="color: mediumblue">Name</p></td>
+            <td><p style="color: mediumblue">License#</p></td>
+            <td><p style="color: mediumblue">Market</p></td>
+            <td><p style="color: mediumblue">Town/Village</p></td>
+            <td><p style="color: mediumblue">City</p></td>
+            <td><p style="color: mediumblue">State</p></td>
+            <td><p style="color: mediumblue">Country</p></td>
+            <td><p style="color: mediumblue">Email</p></td>
+            <td><p style="color: mediumblue">Cell</p></td>
+        </tr>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td><img src=""/></td>
+                <td><p>@s.med_store.name</p></td>
+                <td><p>@s.med_store.license_no</p></td>
+                <td><p>@s.med_store.market</p></td>
+                <td><p>@s.med_store.town</p></td>
+                <td><p>@s.med_store.city</p></td>
+                <td><p>@s.med_store.state</p></td>
+                <td><p>@s.med_store.country</p></td>
+                <td><p>@s.med_store.email</p></td>
+                <td><p>@s.med_store.cell</p></td>
+                <td><input type="button" class="btn btn-danger pull-right" id="cart" name="cart" value="Update" /></td>
+                <td><input type="button" class="btn btn-danger pull-right" id="cart" name="cart" value="Delete" /></td>
+            </tr>
+        }
+    </table>
+    <input type="button" value="Add New" class="btn btn-success" />
+</div>

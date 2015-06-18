@@ -1,0 +1,75 @@
+﻿@model List<QMProject.Models.ParentClass>
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_LayoutClientLogOut.cshtml";
+}
+<div class="span10" align="center">
+    <label style="font-size:x-large">Sign Up</label>
+    <form role="form" method="post" action="/ClientLogOut/Add" enctype="multipart/form-data" id="userForm">
+        <div class="span6">
+            <div>
+                @Html.Label("User name")
+                @Html.TextBoxFor(m => m[0].usr.user_name, new { name = "user_name", id = "user_name" })
+            </div>
+            <p id="result"></p>
+            <script>
+                $(document).ready(function () {
+                    $('#user_name').focusout(function () {
+                        var userName = $('#user_name').val();
+                        $('#checking').show();
+                        $.getJSON("/ClientLogOut/CheckUserName?user_name=" + userName, function (data) {
+                            if (data == true) {
+                                $('#result').text("user name available");
+                            }
+                            else {
+                                $('#result').text("user name already exists");
+                            }
+                        });
+                    });
+                });
+            </script>
+            <div>
+                @Html.Label("Password")
+                @Html.PasswordFor(m => m[0].usr.password, new { name = "password", id = "pwd" })
+            </div>
+            <div>
+                @Html.Label("Retype Password")
+                <input type="password" class="form-control" id="pwd1">
+            </div>
+            <div>
+                @Html.Label("Name")
+                @Html.TextBoxFor(m => m[0].usr.Name, new { name = "Name" })
+            </div>
+            <div>
+                @Html.Label("Email")
+                @Html.TextBoxFor(m => m[0].usr.email, new { type = "email", name = "email", id = "email" })
+            </div>
+            <script>
+                $('#email').validate();
+            </script>
+            <div>
+                @Html.Label("Cell#")
+                @Html.TextBoxFor(m => m[0].usr.cell, new { type = "tel", name = "cell" })
+            </div>
+        </div>
+        <div>
+            @Html.Label("Street")
+            @Html.TextBoxFor(m => m[0].usr.street, new { name = "street" })
+            @Html.Label("House")
+            @Html.TextBoxFor(m => m[0].usr.house, new { name = "house" })
+            @Html.Label("Village/Town")
+            @Html.TextBoxFor(m => m[0].usr.town, new { name = "town" })
+            @Html.Label("City")
+            @Html.TextBoxFor(m => m[0].usr.city, new { name = "city" })
+            @Html.Label("State/Province")
+            @Html.TextBoxFor(m => m[0].usr.state, new { name = "state" })
+            @Html.Label("Country")
+            @Html.TextBoxFor(m => m[0].usr.country, new { name = "country" })
+        </div>
+        <div>
+            @Html.Label("Upload Profile photo")
+            <input type="file" style="margin-left:5px" accept="image/*" name="image_add" id="image_add" />
+        </div>
+        <input type="submit" class="btn btn-Info" value="Register" name="Add" />
+    </form>
+</div>

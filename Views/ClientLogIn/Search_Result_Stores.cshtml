@@ -1,0 +1,18 @@
+﻿@model List<QMProject.Models.ParentClass>
+@{
+    ViewBag.Title = "Search_Result_Stores";
+    Layout = "~/Views/Shared/_LayoutClientLogIn.cshtml";
+}
+<div class="span12" align="center">
+    <p>Available on following medical stores close to you</p>
+    <table>
+        @foreach (var s in Model)
+                {
+            <tr>
+                <td><img src="" /></td>
+                <td><p><b style="font-style:italic"><p style="color:blueviolet">@s.med_store.name</p></b>@s.med_store.market market @s.med_store.town @s.med_store.city @s.med_store.state @s.med_store.country</p></td>
+                <td><input type="button" class="btn btn-danger pull-right" id="cart" name="cart" value="Add Cart" /></td>
+            </tr>
+                }
+</table>
+</div>

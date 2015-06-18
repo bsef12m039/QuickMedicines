@@ -1,0 +1,17 @@
+﻿@model List<QMProject.Models.ParentClass>
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_LayoutClientLogIn.cshtml";
+}
+<div class="span12" align="center">
+    <form action="/ClientLogIn/Search_Result_Stores" method="post">
+        <p><b style="font-size:x-large">Search Medicine</b></p>
+        <label style="color:blue">Medicine Name(Brand Name)</label>
+        @Html.TextBoxFor(m => m[0].med.brand_name, new { name = "brand_name" })
+        <label style="color:blue">Location(Optional)</label>
+        <input id="loc" name="loc" type="text" />
+        <div>
+            <input id="search" name="search" value="Search" type="submit" class="btn btn-info" />
+        </div>
+    </form>
+</div>

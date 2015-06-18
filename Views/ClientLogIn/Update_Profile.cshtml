@@ -1,0 +1,56 @@
+﻿@model QMProject.Models.ParentClass
+@{
+    ViewBag.Title = "Update_Profile";
+    Layout = "~/Views/Shared/_LayoutClientLogIn.cshtml";
+}
+<div class="span10" align="center">
+    <label style="font-size:x-large">Update Profile</label>
+    <form role="form" method="post" action="/ClientLogOut/Add">
+        <div class="span6">
+            <div class="form-group">
+                @Html.Label("User name")
+                @Html.TextBoxFor(m => m.usr.user_name, new { name = "user_name" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Password")
+                @Html.PasswordFor(m => m.usr.password, new { name = "password" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Retype Password")
+                <input type="password" class="form-control" id="pwd1">
+            </div>
+            <div class="form-group">
+                @Html.Label("Name")
+                @Html.TextBoxFor(m => m.usr.Name, new { name = "Name" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Email")
+                @Html.TextBoxFor(m => m.usr.email, new { type = "email", name = "email" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Cell#")
+                @Html.TextBoxFor(m => m.usr.cell, new { type = "tel", name = "cell" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Street")
+            @Html.TextBoxFor(m => m.usr.street, new { name = "street" })
+            @Html.Label("House")
+            @Html.TextBoxFor(m => m.usr.house, new { name = "house" })
+            @Html.Label("Village/Town")
+            @Html.TextBoxFor(m => m.usr.town, new { name = "town" })
+            @Html.Label("City")
+            @Html.TextBoxFor(m => m.usr.city, new { name = "city" })
+            @Html.Label("State/Province")
+            @Html.TextBoxFor(m => m.usr.state, new { name = "state" })
+            @Html.Label("Country")
+            @Html.TextBoxFor(m => m.usr.country, new { name = "country" })
+        </div>
+        <div class="form-control">
+            @Html.Label("Upload Profile photo")
+            <input type="file" style="margin-left:5px" accept="image/*" />
+        </div>
+        <input value="upload" type="button" class="btn btn-info" />
+        <input type="submit" class="btn btn-Info" value="Update" name="Add" />
+    </form>
+</div>

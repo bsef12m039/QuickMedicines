@@ -1,0 +1,74 @@
+﻿@model List<QMProject.Models.ParentClass>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row inverse" style="margin:5px">
+        <div class="col-mid-3" align="left">
+            <label style="color:white" class="pull-left"><iframe src="http://free.timeanddate.com/clock/i4p1ayw2/n756" frameborder="0" width="83" height="18"></iframe></label>
+        </div>
+        <form method="post" action="/ClientLogIn/LogOut">
+            <input id="logout" name="logout" type="submit" class="btn btn-info pull-right" value="Logout" />
+        </form>
+    </div>
+    <div id="navbar" class="navbar navbar-inverse" style="align-content:center">
+        <div id="inner_nav" class="navbar-inner">
+            <div class="span2" align="center" style="margin:5px">
+                <a href="/ClientLogIn/Home">
+                    <img src="~/Images/logo.png" style="border-radius:3px" />
+                </a>
+            </div>
+            <div class="span8">
+                <a id="home" name="home" class="brand" href="/ClientLogIn/Home">Home</a>
+                <a id="search" name="search" class="brand" href="/ClientLogIn/Search">Search</a>
+                <a id="update" name="update" class="brand" href="/ClientLogIn/Update_Profile">Update Profile</a>
+                <a id="history" name="history" class="brand" href="/ClientLogIn/History">History</a>
+                <a id="contactus" name="contactus" class="brand" href="/ClientLogIn/Contact">Contact us</a>
+            </div>
+            <div align="right">
+                <label class="pull-right" style="margin-top:5px; color:white">@Session["userName"]</label>
+            </div>
+        </div>
+    </div>
+    <div style="margin:20px">
+        <div class="row">
+            <div id="sidebar" class="sidebar-nav-fixed pull-left" style="background-color: black; margin-left: 20px; border-radius: 5px; padding: 10px">
+                <ul>
+                    <li>
+                        <label style="color: blue">Muhammad Abubaker</label>
+                    </li>
+                    <li>
+                        <label style="color: blue">Hafiz Bilal Ahmed</label>
+                    </li>
+                    <li>
+                        <label style="color: blue">Faisal Pervaiz</label>
+                    </li>
+                </ul>
+            </div>
+            <div id="sidbar" class="sidebar-nav-fixed pull-right" style="background-color: black; border-radius: 5px; padding: 10px">
+                <ul>
+                    <li>
+                        <label style="color: blue">Azeem Medical Store</label>
+                    </li>
+                    <li>
+                        <label style="color: blue">Punjab Medical Store</label>
+                    </li>
+                    <li>
+                        <label style="color: blue">Chand Medical Store</label>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                @RenderBody();
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿@model QMProject.Models.ParentClass
+@{
+    ViewBag.Title = "Search_Store";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="span12" align="center">
+    <form action="/Admin/Search_Result_Stores" method="post">
+        <p><b style="font-size:x-large">Search Medicine Stores</b></p>
+        <label style="color:blue">Medicine Store Name</label>
+        <input id="name" name="name" type="text" />
+        <div>
+            <input value="Search" type="submit" class="btn btn-info" />
+        </div>
+    </form>
+</div>
